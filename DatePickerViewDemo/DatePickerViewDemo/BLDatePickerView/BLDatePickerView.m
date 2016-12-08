@@ -84,7 +84,7 @@ typedef enum : NSUInteger {
     _pickViewFrame = frame;
     
     self.frame = CGRectMake(0, 0, BL_ScreenW, BL_ScreenH);
-    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.1];
+    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
     
     _yearSelectedRow = 0;
     _monthSelectedRow = 0;
@@ -205,6 +205,9 @@ typedef enum : NSUInteger {
     [self.sureButton setTitleColor:sureButtonColor forState:UIControlStateNormal];
 }
 
+- (void)setBackGAlpha:(CGFloat)backGAlpha{
+    self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:backGAlpha];
+}
 #pragma mark - show,dismiss
 
 - (void)bl_show{
