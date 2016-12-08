@@ -43,5 +43,6 @@
 @property (nonatomic, strong)UIColor *cancelButtonColor;
 /** 确定按钮颜色 */
 @property (nonatomic, strong)UIColor *sureButtonColor;
-
+/** 设置背景透明度 0~1 */
+@property (nonatomic, assign)CGFloat backGAlpha;
 ```
