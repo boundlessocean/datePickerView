@@ -211,6 +211,14 @@ typedef enum : NSUInteger {
 #pragma mark - show,dismiss
 
 - (void)bl_show{
+    if (![UIApplication sharedApplication].keyWindow) {
+        [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(pickerViewShouldShow) name:UIApplicationDidFinishLaunchingNotification object:nil];
+    } else{
+        [self pickerViewShouldShow];
+    }
+}
+
+- (void)pickerViewShouldShow{
     [[UIApplication sharedApplication].keyWindow addSubview:self];
     [UIView animateWithDuration:animationDuration animations:^{
         CGRect tempRect = _topView.frame;
